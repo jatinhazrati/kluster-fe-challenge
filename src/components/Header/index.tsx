@@ -1,6 +1,7 @@
 import { Button, Navbar } from "flowbite-react";
 import { FC } from "react";
 import { Link } from "react-router-dom";
+import { NAVBAR_LINKS } from "./constants";
 
 const Header: FC = () => {
   return (
@@ -17,12 +18,16 @@ const Header: FC = () => {
       </Navbar.Brand>
       <div className="flex md:order-2">
         <Link to="/cart">
-          <Button>Cart</Button>
+          <Button color="purple">Cart</Button>
         </Link>
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        <Navbar.Link>Home</Navbar.Link>
+        {NAVBAR_LINKS.map((link) => (
+          <Navbar.Link as={Link} href={link.route}>
+            {link.name}
+          </Navbar.Link>
+        ))}
       </Navbar.Collapse>
     </Navbar>
   );
