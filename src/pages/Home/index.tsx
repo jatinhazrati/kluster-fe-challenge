@@ -1,3 +1,6 @@
+import { Card } from "flowbite-react";
+import BookCard from "../../components/BookCard";
+
 const Home = () => {
   return (
     <>
@@ -15,7 +18,7 @@ const Home = () => {
             Journey Through Pages, Explore Endless Worlds
           </p>
         </div>
-        <div className="relative flex-1 flex justify-center items-center max-xl:py-40 bg-center">
+        <div className="relative flex-1 flex justify-center items-center max-xl:py-10 max-xl:padding-x">
           <img
             src="/src/assets/home_page.svg"
             alt="Home Logo"
@@ -23,6 +26,17 @@ const Home = () => {
             height={400}
             className="object-contain relative z-10"
           />
+        </div>
+      </section>
+      {/* Featured Books */}
+      <section className="max-container padding-l padding-r">
+        <div className="flex flex-col justify-start gap-5">
+          <h2 className="text-4xl font-palanquin font-bold">
+            Our <span className="text-purple-800"> Featured </span> Books
+          </h2>
+        </div>
+        <div className="mt-16 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-6 gap-14">
+          <BookCard />
         </div>
       </section>
     </>
