@@ -5,26 +5,26 @@ import { NAVBAR_LINKS } from "./constants";
 
 const Header: FC = () => {
   return (
-    <Navbar fluid rounded>
+    <Navbar fluid rounded className="max-container pt-4">
       <Navbar.Brand>
         <img
           src="/src/assets/mykluster_logo.avif"
           className="mr-3 h-6 sm:h-9"
-          alt="Flowbite React Logo"
+          alt="MyKluster Logo"
         />
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+        <span className="self-center whitespace-nowrap text-lg font-semibold dark:text-white">
           Kluster Challenge
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2">
         <Link to="/cart">
-          <Button color="purple">Cart</Button>
+          <Button color="purple"><span className="text-base">Cart</span></Button>
         </Link>
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
         {NAVBAR_LINKS.map((link) => (
-          <Navbar.Link as={Link} href={link.route}>
+          <Navbar.Link className="text-lg" as={Link} href={link.route}>
             {link.name}
           </Navbar.Link>
         ))}
