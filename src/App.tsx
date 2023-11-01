@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
-import Home from "./pages/Home";
 import { fetchBooks } from "./redux/books/reducer";
 import { useAppDispatch } from "./redux/hooks";
+import { ROUTES } from "./utils/routes";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -13,10 +14,14 @@ function App() {
   }, []);
 
   return (
-    <>
+    <Suspense fallback={<>Loading ...</>}>
       <Header />
-      <Home />
-    </>
+      <Routes>
+        {ROUTES.map((route, index) => (
+          <Route key={index} path={route.path} element={<route.component />} />
+        ))}
+      </Routes>
+    </Suspense>
   );
 }
 
