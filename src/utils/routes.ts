@@ -7,7 +7,7 @@ const BookDetails = lazy<FC>(() => import("../pages/BookDetails/index"));
 const AuthorDetails = lazy<FC>(() => import("../pages/AuthorDetails/index"));
 const Cart = lazy<FC>(() => import("../pages/Cart/index"));
 
-export const ROUTES = [
+export const PUBLIC_ROUTES = [
   {
     path: "/",
     component: Home,
@@ -28,6 +28,9 @@ export const ROUTES = [
     path: "/author/:name",
     component: AuthorDetails,
   },
+];
+
+export const PRIVATE_ROUTE = [
   {
     path: "/cart",
     component: Cart,

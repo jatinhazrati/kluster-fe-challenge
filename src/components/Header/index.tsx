@@ -1,12 +1,14 @@
+import { SignInButton, SignOutButton, useUser } from "@clerk/clerk-react";
 import { Button, Navbar } from "flowbite-react";
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import { NAVBAR_LINKS } from "./constants";
-import { useAppSelector } from "../../redux/hooks";
 import logo from "../../../public/logo.svg";
+import { useAppSelector } from "../../redux/hooks";
+import { NAVBAR_LINKS } from "./constants";
 
 const Header: FC = () => {
   const { cartItems } = useAppSelector((state) => state.cart);
+  const { isLoaded, isSignedIn } = useUser();
 
   return (
     <section className="max-container py-4">
@@ -25,6 +27,9 @@ const Header: FC = () => {
               </span>
             </Button>
           </Link>
+          <Button color="purple">
+            {!isLoaded || !isSignedIn ? <SignInButton /> : <SignOutButton />}
+          </Button>
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>
