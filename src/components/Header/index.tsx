@@ -27,9 +27,11 @@ const Header: FC = () => {
               </span>
             </Button>
           </Link>
-          <Button color="purple">
-            {!isLoaded || !isSignedIn ? <SignInButton /> : <SignOutButton />}
-          </Button>
+          {isLoaded && (
+            <Button color="purple">
+              {!isSignedIn ? <SignInButton /> : <SignOutButton />}
+            </Button>
+          )}
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>
