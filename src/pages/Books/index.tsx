@@ -11,11 +11,11 @@ const Books = () => {
   const { genresList, authorsList } = useBooks();
 
   const [filteredBooks, setFilteredBooks] = useState<IBook[]>([]);
-  const [searchInput, setSearchInput] = useState("");
-  const [selectedAuthor, setSelectedAuthor] = useState("");
-  const [selectedGenre, setSelectedGenre] = useState("");
+  const [searchInput, setSearchInput] = useState<string>("");
+  const [selectedAuthor, setSelectedAuthor] = useState<string>("");
+  const [selectedGenre, setSelectedGenre] = useState<string>("");
 
-  const filterBooks = () => {
+  const filterBooks = (): void => {
     const newFilteredBooks = books.filter((book) => {
       const matchesSearch =
         !searchInput ||
@@ -31,7 +31,7 @@ const Books = () => {
     setFilteredBooks(newFilteredBooks);
   };
 
-  const clearFilters = () => {
+  const clearFilters = (): void => {
     setSearchInput("");
     setSelectedAuthor("");
     setSelectedGenre("");
