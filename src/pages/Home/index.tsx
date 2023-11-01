@@ -5,7 +5,7 @@ const Home = () => {
   const { featuredBooks } = useBooks();
 
   return (
-    <>
+    <main>
       {/* Hero Section */}
       <section className="w-full flex xl:flex-row flex-col gap-10 max-container xl:padding-l wide:padding-r padding-b">
         <div className="relative xl:w-2/5 flex flex-col justify-center items-start w-full max-xl:padding-x pt-24">
@@ -49,7 +49,7 @@ const Home = () => {
           ))}
         </div>
       </section>
-    </>
+    </main>
   );
 };
 
