@@ -4,6 +4,7 @@ import { IBook } from "../utils/types";
 interface IUseBooks {
   featuredBooks: IBook[];
   getAuthorInitials: (book: IBook) => string;
+  getGenres: (book: IBook) => string[];
 }
 
 export const useBooks = (): IUseBooks => {
@@ -24,8 +25,20 @@ export const useBooks = (): IUseBooks => {
     return authorInitials;
   };
 
+  const getGenres = (book: IBook): string[] => {
+    const genresList: string[] = [];
+
+    const genres = book.genres?.split(", ");
+    if (Array.isArray(genres)) {
+      genresList.push(...genres);
+    }
+
+    return genresList;
+  };
+
   return {
     featuredBooks,
     getAuthorInitials,
+    getGenres,
   };
 };

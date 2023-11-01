@@ -5,7 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +18,7 @@
     margin: 0 auto;
   }
 
-  .book_card_image{
+  .book_image {
     height: 300px;
   }
 }
@@ -52,6 +51,4 @@
   .padding-b {
     @apply sm:pb-24 pb-12;
   }
-
-  
 }

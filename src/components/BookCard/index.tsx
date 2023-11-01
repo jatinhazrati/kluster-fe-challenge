@@ -1,19 +1,30 @@
 import { Card } from "flowbite-react";
 import { FC } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface IBookCardProps {
+  id: number;
   title: string;
   img_src: string;
   rating: number;
   price: number;
 }
 
-const BookCard: FC<IBookCardProps> = ({ title, img_src, rating, price }) => {
+const BookCard: FC<IBookCardProps> = ({
+  id,
+  title,
+  img_src,
+  rating,
+  price,
+}) => {
+  const navigate = useNavigate();
+
   return (
     <Card
       renderImage={() => (
-        <img className="book_card_image" alt="book thumbnail" src={img_src} />
+        <img className="book_image" alt="book thumbnail" src={img_src} />
       )}
+      onClick={() => navigate("/book" + `/${id}`)}
     >
       <a href="#">
         <h5 className="text-xl font-palanquin font-semibold tracking-tight text-gray-900 dark:text-white">

@@ -41,6 +41,7 @@ const Home = () => {
           {featuredBooks.map((book) => (
             <BookCard
               key={book.id}
+              id={book.id}
               title={book.title}
               img_src={book.image_url}
               rating={book.rating}

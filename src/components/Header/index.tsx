@@ -27,7 +27,7 @@ const Header: FC = () => {
         </div>
         <Navbar.Collapse>
           {NAVBAR_LINKS.map((link) => (
-            <Link className="text-lg" to={link.route}>
+            <Link key={link.route} className="text-lg" to={link.route}>
               {link.name}
             </Link>
           ))}

@@ -10,7 +10,7 @@ const Books = () => {
         <div className="mt-12 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-6 gap-14">
           {books.map((book) => (
             <BookCard
-              key={book.id}
+              id={book.id}
               title={book.title}
               img_src={book.image_url}
               rating={book.rating}
