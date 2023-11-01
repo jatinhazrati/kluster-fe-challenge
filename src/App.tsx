@@ -1,6 +1,5 @@
 import { Suspense, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
 import Header from "./components/Header";
 import { fetchBooks } from "./redux/books/reducer";
 import { useAppDispatch } from "./redux/hooks";

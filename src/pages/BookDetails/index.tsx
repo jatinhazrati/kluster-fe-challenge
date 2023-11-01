@@ -38,7 +38,7 @@ const BookDetails = () => {
           </h1>
           {bookDetail && (
             <div className="mt-6">
-              <Author book={bookDetail} />
+              <Author author={bookDetail.authors} />
             </div>
           )}
           <div className="mt-6 grid lg:grid-cols-3 md:grid-cols-4 sm:grid-cols-2 grid-cols-1 sm:gap-6 gap-8 padding-r">
