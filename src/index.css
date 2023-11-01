@@ -18,6 +18,10 @@
     max-width: 1440px;
     margin: 0 auto;
   }
+
+  .book_card_image{
+    height: 300px;
+  }
 }
 
 @layer utilities {
@@ -48,4 +52,6 @@
   .padding-b {
     @apply sm:pb-24 pb-12;
   }
+
+  
 }

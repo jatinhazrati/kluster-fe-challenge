@@ -1,7 +1,9 @@
-import { Card } from "flowbite-react";
 import BookCard from "../../components/BookCard";
+import { useBooks } from "../../hooks/useBooks";
 
 const Home = () => {
+  const { featuredBooks } = useBooks();
+
   return (
     <>
       {/* Hero Section */}
@@ -20,7 +22,7 @@ const Home = () => {
         </div>
         <div className="relative flex-1 flex justify-center items-center max-xl:py-10 max-xl:padding-x">
           <img
-            src="/src/assets/home_page.svg"
+            src="/src/assets/home_cover.svg"
             alt="Home Logo"
             width={400}
             height={400}
@@ -29,14 +31,22 @@ const Home = () => {
         </div>
       </section>
       {/* Featured Books */}
-      <section className="max-container padding-l padding-r">
+      <section className="max-container padding-l padding-r padding-b">
         <div className="flex flex-col justify-start gap-5">
           <h2 className="text-4xl font-palanquin font-bold">
             Our <span className="text-purple-800"> Featured </span> Books
           </h2>
         </div>
         <div className="mt-16 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-6 gap-14">
-          <BookCard />
+          {featuredBooks.map((book) => (
+            <BookCard
+              key={book.id}
+              title={book.title}
+              img_src={book.image_url}
+              rating={book.rating}
+              price={book.num_pages}
+            />
+          ))}
         </div>
       </section>
     </>

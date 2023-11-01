@@ -9,12 +9,12 @@ const Header: FC = () => {
       <Navbar>
         <Navbar.Brand>
           <img
-            src="/src/assets/mykluster_logo.avif"
+            src="/src/assets/logo.svg"
             className="mr-3 h-6 sm:h-9"
-            alt="MyKluster Logo"
+            alt="Logo"
           />
           <span className="self-center whitespace-nowrap text-lg font-semibold dark:text-white">
-            Kluster Challenge
+            Bookbay
           </span>
         </Navbar.Brand>
         <div className="flex md:order-2 gap-2">
