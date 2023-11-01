@@ -16,3 +16,10 @@ export interface IBook {
   Quote2: string;
   Quote3: string;
 }
+
+export interface ICartItem {
+  id: number;
+  title: string;
+  quantity: number;
+  price: number;
+}

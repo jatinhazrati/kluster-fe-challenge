@@ -8,9 +8,9 @@ import { IBook } from "../../utils/types";
 
 const BookDetails = () => {
   const { books } = useAppSelector((state) => state.books);
-  const { getGenres } = useBooks();
   const [bookDetail, setBookDetail] = useState<IBook | undefined>();
 
+  const { getGenres } = useBooks();
   const { id } = useParams();
 
   useEffect(() => {

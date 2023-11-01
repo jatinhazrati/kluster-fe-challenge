@@ -2,8 +2,11 @@ import { Button, Navbar } from "flowbite-react";
 import { FC } from "react";
 import { Link } from "react-router-dom";
 import { NAVBAR_LINKS } from "./constants";
+import { useAppSelector } from "../../redux/hooks";
 
 const Header: FC = () => {
+  const { cartItems } = useAppSelector((state) => state.cart);
+
   return (
     <section className="max-container py-4">
       <Navbar>
@@ -20,7 +23,9 @@ const Header: FC = () => {
         <div className="flex md:order-2 gap-2">
           <Link to="/cart">
             <Button color="purple">
-              <span className="text-base">Cart</span>
+              <span className="text-base">
+                Cart {cartItems.length > 0 && `(${cartItems.length})`}
+              </span>
             </Button>
           </Link>
           <Navbar.Toggle />

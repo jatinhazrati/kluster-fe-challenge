@@ -5,6 +5,7 @@ const Books = lazy<FC>(() => import("../pages/Books/index"));
 const Authors = lazy<FC>(() => import("../pages/Authors/index"));
 const BookDetails = lazy<FC>(() => import("../pages/BookDetails/index"));
 const AuthorDetails = lazy<FC>(() => import("../pages/AuthorDetails/index"));
+const Cart = lazy<FC>(() => import("../pages/Cart/index"));
 
 export const ROUTES = [
   {
@@ -26,5 +27,9 @@ export const ROUTES = [
   {
     path: "/author/:name",
     component: AuthorDetails,
+  },
+  {
+    path: "/cart",
+    component: Cart,
   },
 ];

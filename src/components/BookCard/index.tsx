@@ -1,6 +1,8 @@
 import { Card } from "flowbite-react";
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import { addToCart } from "../../redux/cart/reducer";
+import { useAppDispatch } from "../../redux/hooks";
 
 interface IBookCardProps {
   id: number;
@@ -18,6 +20,7 @@ const BookCard: FC<IBookCardProps> = ({
   price,
 }) => {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   return (
     <Card
@@ -41,7 +44,20 @@ const BookCard: FC<IBookCardProps> = ({
         <span className="text-2xl font-montserrat font-bold text-gray-800 dark:text-white">
           ₹ {price}
         </span>
-        <div className="font-montserrat rounded-lg bg-purple-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-cyan-800">
+        <div
+          className="font-montserrat rounded-lg bg-purple-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
+          onClick={(e) => {
+            e.stopPropagation();
+            dispatch(
+              addToCart({
+                id,
+                title,
+                quantity: 1,
+                price,
+              })
+            );
+          }}
+        >
           <p>Add to Cart</p>
         </div>
       </div>
