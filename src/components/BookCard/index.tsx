@@ -3,6 +3,7 @@ import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { addToCart } from "../../redux/cart/reducer";
 import { useAppDispatch } from "../../redux/hooks";
+import star from "../../assets/star.svg";
 
 interface IBookCardProps {
   id: number;
@@ -35,7 +36,7 @@ const BookCard: FC<IBookCardProps> = ({
         </h5>
       </a>
       <div className="mb-5 mt-2.5 flex items-center">
-        <img src="/src/assets/star.svg" alt="star rating" />
+        <img src={star} alt="star rating" />
         <span className="font-montserrat mx-2 rounded bg-purple-100 px-2.5 py-0.5 text-xs font-semibold text-white-800 dark:bg-purple-200 dark:text-purple-800">
           <p>{rating}</p>
         </span>

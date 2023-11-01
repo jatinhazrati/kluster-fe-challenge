@@ -3,6 +3,7 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { NAVBAR_LINKS } from "./constants";
 import { useAppSelector } from "../../redux/hooks";
+import logo from "../../../public/logo.svg";
 
 const Header: FC = () => {
   const { cartItems } = useAppSelector((state) => state.cart);
@@ -11,7 +12,7 @@ const Header: FC = () => {
     <section className="max-container py-4">
       <Navbar>
         <Navbar.Brand>
-          <img src="/public/logo.svg" className="mr-3 h-6 sm:h-9" alt="Logo" />
+          <img src={logo} className="mr-3 h-6 sm:h-9" alt="Logo" />
           <span className="self-center whitespace-nowrap text-lg font-semibold dark:text-white">
             Bookbay
           </span>

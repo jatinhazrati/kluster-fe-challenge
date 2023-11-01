@@ -10,7 +10,7 @@
 Hi Kluster Team 👋,
 Welcome to Bookbay Readme 🚀
 
-#### 🔗 Live Link &rarr; [Bookbay](https://bookbay.vercel.app/)
+#### 🔗 Live Link &rarr; [Kluster FE Challenge](https://kluster-fe-challenge.vercel.app/)
 
 ### 👨‍💻 Installation and Setup Instructions
 

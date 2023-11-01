@@ -1,3 +1,4 @@
+import home_cover from "../../assets/home_cover.svg";
 import BookCard from "../../components/BookCard";
 import { useBooks } from "../../hooks/useBooks";
 
@@ -21,7 +22,7 @@ const Home = () => {
         </div>
         <div className="relative flex-1 flex justify-center items-center max-xl:py-10 max-xl:padding-x">
           <img
-            src="/src/assets/home_cover.svg"
+            src={home_cover}
             alt="Home Logo"
             width={400}
             height={400}
