@@ -4,7 +4,7 @@
             padding-top: 25px;
             margin-bottom: 50px";
 >
-  <img src="/public/mykluster_logo.avif" alt="" height="50px" width="200px" margin="50px" srcset="" />
+  <img src="/public/mykluster_logo.avif" alt="" height="50px" width="50px" margin="50px" srcset="" />
 </div>
 
 Hi Kluster Team 👋,
