@@ -1,26 +1,25 @@
 import { Avatar } from "flowbite-react";
 import { FC } from "react";
-import { useBooks } from "../../hooks/useBooks";
-import { IBook } from "../../utils/types";
 import { useNavigate } from "react-router-dom";
+import { useBooks } from "../../hooks/useBooks";
 
 type IAuthorProps = {
-  book: IBook;
+  author: string;
 };
 
-const Author: FC<IAuthorProps> = ({ book }) => {
+const Author: FC<IAuthorProps> = ({ author }) => {
   const navigate = useNavigate();
   const { getAuthorInitials } = useBooks();
 
   return (
     <Avatar
-      placeholderInitials={getAuthorInitials(book)}
+      placeholderInitials={getAuthorInitials(author)}
       rounded
       className="items-center justify-start"
-      onClick={() => navigate("/author" + `/${book.authors}`)}
+      onClick={() => navigate("/author" + `/${author}`)}
     >
       <div className="space-y-1 font-medium dark:text-white">
-        <div>{book.authors}</div>
+        <div>{author}</div>
       </div>
     </Avatar>
   );

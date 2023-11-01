@@ -3,8 +3,10 @@ import { IBook } from "../utils/types";
 
 interface IUseBooks {
   featuredBooks: IBook[];
-  getAuthorInitials: (book: IBook) => string;
+  getAuthorInitials: (author: string) => string;
   getGenres: (book: IBook) => string[];
+  genresList: string[];
+  authorsList: string[];
 }
 
 export const useBooks = (): IUseBooks => {
@@ -12,10 +14,10 @@ export const useBooks = (): IUseBooks => {
 
   const featuredBooks = books.filter((books) => books.rating > 4.5);
 
-  const getAuthorInitials = (book: IBook): string => {
+  const getAuthorInitials = (author: string): string => {
     let authorInitials = "";
 
-    const authorName = book.authors?.split(" ");
+    const authorName = author?.split(" ");
     if (Array.isArray(authorName)) {
       for (const word of authorName) {
         authorInitials += word.charAt(0);
@@ -36,9 +38,24 @@ export const useBooks = (): IUseBooks => {
     return genresList;
   };
 
+  const genresList: string[] =
+    books &&
+    Array.from(
+      new Set(
+        books?.flatMap((book) =>
+          book.genres?.split(", ").map((genre) => genre.trim())
+        )
+      )
+    );
+
+  const authorsList: string[] =
+    books && Array.from(new Set(books?.map((book) => book.authors)));
+
   return {
     featuredBooks,
     getAuthorInitials,
     getGenres,
+    genresList,
+    authorsList,
   };
 };
